@@ -31,6 +31,89 @@ Widget::Widget(QWidget *parent)
     ui->tableWidget->setColumnCount(4); //設定欄位
     ColTotle<<QStringLiteral("學號")<<QStringLiteral("班級")<<QStringLiteral("姓名")<<QStringLiteral("電話");
     ui->tableWidget->setHorizontalHeaderLabels (ColTotle);
+    
+    // 設定冷色系配色
+    // 主視窗背景：淡藍灰色
+    this->setStyleSheet("QWidget { background-color: #E8F4F8; }");
+    
+    // 表格樣式：藍綠色系
+    ui->tableWidget->setStyleSheet(
+        "QTableWidget {"
+        "   background-color: #F0F8FF;"
+        "   alternate-background-color: #E1F5FE;"
+        "   gridline-color: #81D4FA;"
+        "   selection-background-color: #4FC3F7;"
+        "   selection-color: white;"
+        "   border: 2px solid #4FC3F7;"
+        "   border-radius: 5px;"
+        "}"
+        "QHeaderView::section {"
+        "   background-color: #0288D1;"
+        "   color: white;"
+        "   padding: 5px;"
+        "   border: 1px solid #0277BD;"
+        "   font-weight: bold;"
+        "}"
+        "QTableWidget::item {"
+        "   padding: 5px;"
+        "}"
+    );
+    ui->tableWidget->setAlternatingRowColors(true);
+    
+    // 按鈕樣式：藍色調
+    QString buttonStyle = 
+        "QPushButton {"
+        "   background-color: #0288D1;"
+        "   color: white;"
+        "   border: none;"
+        "   border-radius: 5px;"
+        "   padding: 10px 20px;"
+        "   font-size: 14px;"
+        "   font-weight: bold;"
+        "   min-width: 80px;"
+        "}"
+        "QPushButton:hover {"
+        "   background-color: #0277BD;"
+        "}"
+        "QPushButton:pressed {"
+        "   background-color: #01579B;"
+        "}";
+    
+    ui->pushButton->setStyleSheet(buttonStyle);
+    ui->pushButton_2->setStyleSheet(buttonStyle);
+    ui->pushButton_3->setStyleSheet(buttonStyle);
+    ui->pushButton_4->setStyleSheet(buttonStyle);
+    
+    // 輸入框樣式：淡藍色邊框
+    QString lineEditStyle = 
+        "QLineEdit {"
+        "   background-color: white;"
+        "   border: 2px solid #4FC3F7;"
+        "   border-radius: 5px;"
+        "   padding: 5px;"
+        "   selection-background-color: #81D4FA;"
+        "}"
+        "QLineEdit:focus {"
+        "   border: 2px solid #0288D1;"
+        "}";
+    
+    ui->lineEdit->setStyleSheet(lineEditStyle);
+    ui->lineEdit_2->setStyleSheet(lineEditStyle);
+    ui->lineEdit_3->setStyleSheet(lineEditStyle);
+    ui->lineEdit_4->setStyleSheet(lineEditStyle);
+    
+    // 標籤樣式：深藍色文字
+    QString labelStyle = 
+        "QLabel {"
+        "   color: #01579B;"
+        "   font-weight: bold;"
+        "   font-size: 13px;"
+        "}";
+    
+    ui->label->setStyleSheet(labelStyle);
+    ui->label_2->setStyleSheet(labelStyle);
+    ui->label_3->setStyleSheet(labelStyle);
+    ui->label_4->setStyleSheet(labelStyle);
 }
 
 Widget::~Widget()
