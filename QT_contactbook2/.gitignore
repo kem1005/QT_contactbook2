@@ -27,6 +27,7 @@ Makefile*
 *.prl
 *.app
 moc_*.cpp
+moc_predefs.h
 ui_*.h
 qrc_*.cpp
 Thumbs.db
@@ -72,6 +73,9 @@ CMakeLists.txt.user*
 # --------
 *.dll
 *.exe
+
+# QT executable
+QT_contactbook
 
 # Directories with generated files
 .moc/
